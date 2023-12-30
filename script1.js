@@ -13,7 +13,7 @@ document.querySelector('.check').addEventListener('click',function()
     }
     else if(guess > num && guess <= 20)
     {
-        if(score >= 1)
+        if(score > 1)
         {
             document.querySelector('.message').textContent = '😒TOO HIGH!';
             --score;
@@ -27,7 +27,7 @@ document.querySelector('.check').addEventListener('click',function()
     }
     else if(guess < num && guess >= 1)
     {
-        if(score >= 1)
+        if(score > 1)
         {
             document.querySelector('.message').textContent = '😒TOO LOW!';
             --score;
