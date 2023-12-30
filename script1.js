@@ -25,7 +25,7 @@ document.querySelector('.check').addEventListener('click',function()
         }
         
     }
-    else if(guess < num && guess >= 1)
+    else if(guess < num && guess > 0)
     {
         if(score > 1)
         {
@@ -35,7 +35,7 @@ document.querySelector('.check').addEventListener('click',function()
             document.querySelector('.score').textContent = String(score);
         }
         else{
-            ocument.querySelector('.message').textContent = '💥 YOU LOST THE GAME!';
+            document.querySelector('.message').textContent = '💥 YOU LOST THE GAME!';
         }
     }
     else if(guess === num)
