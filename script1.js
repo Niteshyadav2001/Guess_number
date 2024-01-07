@@ -11,25 +11,12 @@ document.querySelector('.check').addEventListener('click',function()
     {
         document.querySelector('.message').textContent = '❌NO NUMBER!';
     }
-    else if(guess > num && guess <= 20)
+    else if(guess !== num)
     {
         if(score > 1)
         {
-            document.querySelector('.message').textContent = '😒TOO HIGH!';
-            --score;
-            document.querySelector('.number').textContent = '?';
-            document.querySelector('.score').textContent = String(score);
-        }
-        else{
-            document.querySelector('.message').textContent = '💥 YOU LOST THE GAME!';
-        }
-        
-    }
-    else if(guess < num && guess > 0)
-    {
-        if(score > 1)
-        {
-            document.querySelector('.message').textContent = '😒TOO LOW!';
+            document.querySelector('.message').textContent = 
+            guess < num ? '😒TOO LOW!' : 'TOO HIGH';
             --score;
             document.querySelector('.number').textContent = '?';
             document.querySelector('.score').textContent = String(score);
@@ -47,7 +34,9 @@ document.querySelector('.check').addEventListener('click',function()
         }
         document.querySelector('.number').textContent = num;
         document.querySelector('.message').textContent = '😁YOU GOT IT!';
+        document.querySelector('body').style.backgroundColor = '#60b347';
     }
+    
     else if(guess > 20)
     {
         document.querySelector('.message').textContent = '😑CHOOSE B/W 1 to 20!';
@@ -67,5 +56,5 @@ document.querySelector('.again').addEventListener('click',function(){
     document.querySelector('.score').textContent = '20';
     document.querySelector('.number').textContent = '?';
     num = Math.trunc(Math.random()*20)+1;
-    
+    document.querySelector('body').style.backgroundColor = '#222';
 });
